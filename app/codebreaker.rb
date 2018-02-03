@@ -21,6 +21,12 @@ class Codebreaker
       end
 
 
+      if @input != @secret_number
+        output.puts ''
+      end
+      # elsif @input = @secret_number
+      #   output.puts
+
 
 
       # Make sure to replace next line with the actual implemented marking algorithm,
@@ -28,5 +34,6 @@ class Codebreaker
 
       # output.puts "you typed '#{input}'"
     end
+
   end
 end
