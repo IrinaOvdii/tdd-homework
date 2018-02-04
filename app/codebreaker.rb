@@ -25,42 +25,21 @@ class Codebreaker
 
       number_match
       exact_match
-
-      # Make sure to replace next line with the actual implemented marking algorithm,
-      # using the @secret_number
-
-      # output.puts "you typed '#{input}'"
     end
 
     def number_match
-      secret_number = @secret_number
-      input = @input
-
-      if secret_number.include? input[0]
-        output.puts '-'
-      elsif secret_number.include? input[1]
-        output.puts '-'
-      elsif secret_number.include? input[2]
-        output.puts '-'
-      elsif secret_number.include? input[3]
-        output.puts '-'
-      else output.puts ''
+      @input.chars.each_with_index do |n, i|
+        if (@secret_number.include? n) && (@secret_number[i] != n)
+          output.puts '-'
+        end
       end
     end
 
     def exact_match
-      secret_number = @secret_number
-      input = @input
-
-      if secret_number[0] == input[0]
-        output.puts '+'
-      elsif secret_number[1] == input[1]
-        output.puts '+'
-      elsif secret_number[2] == input[2]
-        output.puts '+'
-      elsif secret_number[3] == input[3]
-        output.puts '+'
-      else output.puts ''
+      @input.chars.each_with_index do |n, i|
+        if @secret_number[i] = n
+          output.puts '+'
+        end
       end
     end
 
