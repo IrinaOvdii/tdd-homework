@@ -19,20 +19,31 @@ class Codebreaker
       if @input.length != 4
         output.puts "Try guessing a number with four digits"
       end
-
-
       if @input != @secret_number
         output.puts ''
       end
-      # elsif @input = @secret_number
-      #   output.puts
 
-
+      number_match
 
       # Make sure to replace next line with the actual implemented marking algorithm,
       # using the @secret_number
 
       # output.puts "you typed '#{input}'"
+    end
+
+    def number_match
+      secret_number = @secret_number.chars
+      input = @input
+
+      if secret_number.include? input[0]
+        output.puts '-'
+      elsif secret_number.include? input[1]
+      elsif secret_number.include? input[2]
+        output.puts '-'
+      elsif secret_number.include? input[3]
+        output.puts '-'
+      else output.puts ''
+      end
     end
 
   end
